@@ -8,6 +8,7 @@ Recipe finder that enables the user to create a checklist of ingredients and fin
 * What it does: finds recipes and their respective ingredients with price comparisons through Google Shopping [and online shopping applies]
 * Why: so people can make yummy food and save money
 ## Wireframe/ sketch: 
+![Sketch](Desktop/meals_and_deals.png)
 ## APIs to be used
 * Edamam
 * Google Shopping
