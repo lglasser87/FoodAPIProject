@@ -6,10 +6,11 @@ $(document).ready(function () {
   // Dynamically creating elements when recieving information from the APIs
   // FUNCTION HERE: When getting info:
 
+  $(".btn").on("click", function(){
   // Set variables for API keys
-  var imageSrc = response.blah1.blah2;
-  var recipeText = response.blah3.blah4;
-  var recipeLink = response.blah5.blah6;
+  var imageSrc = "https://media1.tenor.com/images/bb0c3d33046f4c37955d771b66fcca52/tenor.gif?itemid=11927779";
+  var recipeText = "Testing the text";
+  var recipeLink = "Link goes here";
 
   // Create elements with the appropriate classes and content
   var row = $("<div>").addClass("row");
@@ -27,7 +28,7 @@ $(document).ready(function () {
   cardImageDiv.append(cardImage);
   cardImageDiv.append(span);
   // Add the p to the content portion of the card
-  cardContent.append(p);
+  cardContent.append(cardP);
   //append the link to the card action segment
   cardAction.append(a);
   //append the image, content and action divs to the main portion of the card
@@ -40,7 +41,6 @@ $(document).ready(function () {
   row.append(col);
   // Prepend the latest row element to the find recipe div
   $(".find-recipe").prepend(row);
-
-//append
+});
 
 });
