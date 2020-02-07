@@ -20,7 +20,7 @@
       <!-- Navbar goes here -->
       <nav>
         <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">DEMO SITE LAYOUT</a>
+          <a href="#!" class="brand-logo" style="padding-left: 10px">DEMO SITE LAYOUT</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="sass.html">Sass</a></li>
@@ -41,7 +41,15 @@
       <div class="row">
 
         <div class="col s4 find-recipe">
-          <a class="waves-effect waves-light btn">button</a>
+          <div class="row">
+            <form>
+              <div class="input-field left">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </div>
           <!-- API key here -->
           <div class="row">
             <div class="col">
@@ -49,7 +57,7 @@
                 <div class="card-content white-text">
                   <span class="card-title">Card Title</span>
                   <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
+                    I am convenient because I require little markup to use effectively.</p>
                 </div>
                 <div class="card-action">
                   <a href="#">This is a link</a>
@@ -59,41 +67,50 @@
             </div>
           </div>
         </div>
-  
-        <div class="col s8 my-recipe">
+
+        <div class="col s8">
+          <div class="row">
+            <div class="input-field right">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </div>
           <!-- Main content and recipes here  -->
-          <div class="row">
-            <div class="col">
-              <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                  <span class="card-title">Card Title</span>
-                  <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action">
-                  <a href="#">This is a link</a>
-                  <a href="#">This is a link</a>
+          <div class="my-recipe">
+            <div class="row">
+              <div class="col">
+                <div class="card blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                  <span class="card-title">Card Title</span>
-                  <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action">
-                  <a href="#">This is a link</a>
-                  <a href="#">This is a link</a>
+            <div class="row">
+              <div class="col">
+                <div class="card blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-  
+
       </div>
 
       <footer class="page-footer">
