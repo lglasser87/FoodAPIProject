@@ -1,6 +1,7 @@
 $(document).ready(function () {
   //geting the sidenav to collapse in mobile mode  
   $('.sidenav').sidenav();
+  $('select').formSelect();
 
   //RECIPE FINDER DIV
   // Dynamically creating elements when recieving information from the APIs
