@@ -99,18 +99,17 @@
     var myRecipeImage; //=image upload?
     //FOR LOOP
     for (var i=0; i < myIngredientsArr.length; i++){
-
+        var myIngredientsLi = $("<li>");
+        $(myIngredientsLi).append(myIngredientsArr[i]);
     }
     //CREATING TAGS
     var myRecipeDiv = $("<div>");
     var myRecipeNameH = $("<h>");
     var myIngredientsUl = $("<ul>");
-    var myIngredientsLi = $("<li>"); //--> for loop?
     var myDirectionsP = $("<p>");
     var myRecipeImageImg = $("<img>");
     //PUTTING DATA INTO TAGS
     $(myRecipeNameH).append(myRecipeName);
-    $(myIngredientsLi).append(myIngredientsArr[i]); //--> for loop?
     $(myIngredientsUl).append(myIngredientsLi);
     $(myDirectionsP).append(myDirections);
     $(myRecipeImageImg).append(myRecipeImage);
@@ -173,6 +172,13 @@
             },
         };
 
+        for (var i=0; i < ingredientsArr.length; i++) {
+            var ingredientsLi = $("<li>");
+            $(ingredientsLi).attr(".ingredients");
+            $(ingredientsLi).append(ingredientsArr[i]);
+            $(ingredientsUl).append("Ingredients: " + ingredientsArr[i]);
+        }
+
         //CREATING TAGS
         var recipeDiv = $("<div>");
         var recipeNameH = $("<h>");
@@ -180,7 +186,6 @@
         var recipeSourceA = $("<a>");
         var recipeImageImg = $("<img>");
         var ingredientsUl = $("<ul>");
-        var ingredientsLi = $("<li>"); //--> create for loop?
         var directionsP = $("<p>");
 
         //ADDING ATTRIBUTES TO TAGS
@@ -190,7 +195,6 @@
         $(recipeSourceA).attr("#recipe-source");
         $(recipeImageImg).attr("#recipe-image");
         $(ingredientsUl).attr("#ingredients-List");
-        $(ingredientsLi).attr(".ingredients"); //--> for loop?
         $(directionsP).attr("#directions");
 
         //PUTTING DATA INTO TAGS
@@ -199,8 +203,6 @@
         $(chosenFiltersP).append("Chosen Intolerances: " + chosenIntolerance); //--> for loop?
         $(recipeSourceA).append("Recipe Source: " + recipeSource);
         $(recipeImageImg).append(recipeImage);
-        $(ingredientsLi).append(ingredients); //--> for loop?
-        $(ingredientsUl).append("Ingredients: " + ingredientsLi);
         $(directionsP).append(directions);
 
         //MAKING SURE TAGS GO INTO CORRECT DIV
@@ -236,9 +238,6 @@
         });
 
     });
-
-
-
 
 
     //GORDON RAMSEY GIFS
