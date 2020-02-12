@@ -20,7 +20,7 @@
 
     <!--MY RECIPE UPLOAD BTN 
     <form action="/action_page.php">
-        <input type="file" id="myFile" name="filename">
+        <input type="file" id="myFile" name="filename">   
         <input type="submit" value="Upload MB">
     </form> -->
     
@@ -35,7 +35,8 @@
 
     //SPOONACULAR VARIABLES
     //var SpoonacularApiKey = 4b7cbd71e4304fe491c6f169aa6cc0af;
-    var findFood = $("#find-food").val().trim();
+    var APIkey = "4b7cbd71e4304fe491c6f169aa6cc0af";
+    var findFood = $("#find-food").val();
     var chosenDiet = $(".diet-filters").checked; //--> for loop?;
     var chosenIntolerance = $(".intolerance-filters").checked; //--> for loop?
         //URL example: "https://api.spoonacular.com/recipes/search?query=lasagna&apiKey=4b7cbd71e4304fe491c6f169aa6cc0af&number=5&diet=vegetarian&intolerances=gluten&ingredients=cheese, tomato"
@@ -43,16 +44,17 @@
 
     //SPOONACULAR RECIPE SETTINGS --> FOR LOOP IF <1 FILTER?
     if (chosenDiet == null & chosenIntolerance == null) {
-         var spoonacularRecipeSettings = {"https://api.spoonacular.com/recipes/search?query=" + findFood + "&apiKey=4b7cbd71e4304fe491c6f169aa6cc0af&number=5",
-         "method": "GET",
-         "timeout": 0,
-         "headers": {
+         var spoonacularRecipeSettings = {
+        "url": "https://api.spoonacular.com/recipes/search?query=" + findFood + "&apiKey=" + APIkey,
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
              "": "4b7cbd71e4304fe491c6f169aa6cc0af"
             },
         };
     }
     if (chosenDiet !== null & chosenIntolerance == null) {
-         var spoonacularRecipeSettings = {"https://api.spoonacular.com/recipes/search?query=" + findFood + "&apiKey=4b7cbd71e4304fe491c6f169aa6cc0af&number=5&diet=" + chosenDiet,
+         var spoonacularRecipeSettings = {"url": "https://api.spoonacular.com/recipes/search?query=" + findFood + "&apiKey=" + APIkey + "&number=5&diet=" + chosenDiet,
         "method": "GET",
          "timeout": 0,
          "headers": {
@@ -61,7 +63,7 @@
         };
     } 
     if (chosenDiet == null & chosenIntolerance !== null) {
-         var spoonacularRecipeSettings = {"https://api.spoonacular.com/recipes/search?query=" + findFood + "&apiKey=4b7cbd71e4304fe491c6f169aa6cc0af&number=5&intolerances=" + chosenIntolerance,
+         var spoonacularRecipeSettings = {"url": "https://api.spoonacular.com/recipes/search?query=" + findFood + "&apiKey=" + APIkey + "&number=5&intolerances=" + chosenIntolerance,
          "method": "GET",
          "timeout": 0,
          "headers": {
@@ -70,7 +72,7 @@
         };
     }    
     if (chosenDiet !== null & chosenIntolerance !== null) {
-         var spoonacularRecipeSettings = {"https://api.spoonacular.com/recipes/search?query=" + findFood + "&apiKey=4b7cbd71e4304fe491c6f169aa6cc0af&number=5&diet=" + chosenDiet + "&intolerances=" + chosenIntolerance,
+         var spoonacularRecipeSettings = {"url": "https://api.spoonacular.com/recipes/search?query=" + findFood + "&apiKey=" + APIkey + "&number=5&diet=" + chosenDiet + "&intolerances=" + chosenIntolerance,
          "method": "GET",
          "timeout": 0,
          "headers": {
@@ -78,16 +80,6 @@
             },
         };
     }
-
-    //SPOONACULAR PRICE SETTINGS
-    var spoonacularPriceSettings = {
-    "url": "https://api.spoonacular.com/recipes/" + priceId + "/priceBreakdownWidget.json?apiKey=4b7cbd71e4304fe491c6f169aa6cc0af",
-    "method": "GET",
-    "timeout": 0,
-    "headers": {
-        "": "4b7cbd71e4304fe491c6f169aa6cc0af"
-       },
-    };
 
     //GIPHY VARIABLES
     var gordonRamsey = $(this).attr("data-gordon-ramsey");
@@ -100,8 +92,8 @@
     var filePath = $("spinFilePath");
     //CREATE MY RECIPE
     var myRecipeName = $("#my-recipe-name").val();
-    var myIngredientsStr = $(".my-ingredients").val();
-    var myIngredientsSplit = myIngredientsStr.split("");
+    var myIngredientsStr = $.trim($(".my-ingredients").val());
+    var myIngredientsSplit = myIngredientsStr.split(" ");
     var myIngredientsArr = Array.from(myIngredientsSplit); //--> or one input for one ingredient then add button for more?
     var myDirections = $("#my-directions").val();
     var myRecipeImage; //=image upload?
@@ -117,13 +109,13 @@
     var myDirectionsP = $("<p>");
     var myRecipeImageImg = $("<img>");
     //PUTTING DATA INTO TAGS
-    $(myRecipeH).append(myRecipeName);
+    $(myRecipeNameH).append(myRecipeName);
     $(myIngredientsLi).append(myIngredientsArr[i]); //--> for loop?
     $(myIngredientsUl).append(myIngredientsLi);
     $(myDirectionsP).append(myDirections);
     $(myRecipeImageImg).append(myRecipeImage);
     //ADDING TAGS TO DIV
-    $(myRecipeDiv).append(myRecipeH);
+    $(myRecipeDiv).append(myRecipeNameH);
     $(myRecipeDiv).append(myIngredientsUl);
     $(myRecipeDiv).append(myDirectionsP);
     $(myRecipeDiv).append(myRecipeImageImg);
@@ -169,8 +161,17 @@
         var recipeImage = response.recipe.img;
         var ingredients = response.body.ingredients;
         console.log(ingredients);
-         var ingredientsArr = ingredients[i];
+        var ingredientsArr = ingredients[i];
         var directions = response.body.instructions;
+        //for next ajax call
+        var spoonacularPriceSettings = {
+            "url": "https://api.spoonacular.com/recipes/" + priceId + "/priceBreakdownWidget.json?apiKey=4b7cbd71e4304fe491c6f169aa6cc0af",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "": "4b7cbd71e4304fe491c6f169aa6cc0af"
+            },
+        };
 
         //CREATING TAGS
         var recipeDiv = $("<div>");
@@ -195,7 +196,7 @@
         //PUTTING DATA INTO TAGS
         $(recipeNameH).append(recipeName);
         $(chosenFiltersP).append("Chosen Diet: " + chosenDiet); //--> for loop?
-        $(chosenFiltersP).append("Chosen Intolerances: " + chosenIntolerance; //--> for loop?
+        $(chosenFiltersP).append("Chosen Intolerances: " + chosenIntolerance); //--> for loop?
         $(recipeSourceA).append("Recipe Source: " + recipeSource);
         $(recipeImageImg).append(recipeImage);
         $(ingredientsLi).append(ingredients); //--> for loop?
@@ -215,27 +216,29 @@
 
         //MAKE AND PRINT SHOPPING LIST?
 
-    });
-
-
-    //GET PRICES FOR INGREDIENTS
-    $.ajax(spoonacularPriceSettings).done(function(response) {
+        //GET PRICES FOR INGREDIENTS
+        $.ajax(spoonacularPriceSettings).done(function(response) {
         console.log(response);
 
-        //PULLING DATA, CHECK SCOPE!
-        var prices = response.recipe.prices;
-        var priceArr = Array.from(prices);
-        //CREATING TAG
-        var priceP = $("<p>");
+            //PULLING DATA, CHECK SCOPE!
+            var prices = response.recipe.prices;
+            var priceArr = Array.from(prices);
+            //CREATING TAG
+            var priceP = $("<p>");
 
-        //ENSURING PRICES ARE LISTED FOR ALL INGREDIENTS
-        for (var i=0; i <prices.length; i++){
-            //ADDING DATA TO TAG
-            $(priceP).append(priceArr[i]);
-            //ADDING TAG AFTER INGREDIENTS LIST
-            $(ingredientsUl).append(priceP);
-        }
+            //ENSURING PRICES ARE LISTED FOR ALL INGREDIENTS
+            for (var i=0; i <prices.length; i++){
+                //ADDING DATA TO TAG
+                $(priceP).append(priceArr[i]);
+                //ADDING TAG AFTER INGREDIENTS LIST
+                $(ingredientsUl).append(priceP);
+            }
+        });
+
     });
+
+
+
 
 
     //GORDON RAMSEY GIFS
