@@ -82,7 +82,8 @@
     }
 
     //GIPHY VARIABLES
-    var gordonRamsey = $(this).attr("data-gordon-ramsey");
+    document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
+    var gordonRamsey = $(this).attr("data-gordonramsey");
     var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + gordonRamsey + "&api_key=dc6zaTOxFJmzC&limit=10";
 
     //UPLOAD BTN FOR MY RECIPE... NEW API?
@@ -101,6 +102,7 @@
     for (var i=0; i < myIngredientsArr.length; i++){
         var myIngredientsLi = $("<li>");
         $(myIngredientsLi).append(myIngredientsArr[i]);
+        $(myIngredientsUl).append(myIngredientsArr[i]);
     }
     //CREATING TAGS
     var myRecipeDiv = $("<div>");
@@ -110,7 +112,6 @@
     var myRecipeImageImg = $("<img>");
     //PUTTING DATA INTO TAGS
     $(myRecipeNameH).append(myRecipeName);
-    $(myIngredientsUl).append(myIngredientsLi);
     $(myDirectionsP).append(myDirections);
     $(myRecipeImageImg).append(myRecipeImage);
     //ADDING TAGS TO DIV
@@ -137,11 +138,6 @@
             //BTN FOR MY SAVED FOUND RECIPES
             //BTN FOR MY SAVED RECIPES
     //MAKE RECIPES PERSIST
-    
-   //ON-CLICK: SEARCH FOR RECIPES
-   $.ajax(spoonacularRecipeSettings).done(function(response) {
-       console.log(response);
-   });
 
     //ON-CLICK: SELECT SPECIFIC RECIPE
     $.ajax(spoonacularRecipeSettings).done(function(response) {
