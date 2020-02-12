@@ -38,7 +38,7 @@
     var APIkey = "4b7cbd71e4304fe491c6f169aa6cc0af";
     var findFood = $("#find-food").val();
     var chosenDiet = $(".diet-filters").checked; //--> for loop?;
-    var chosenIntolerance = $(".intolerance-filters").checked; //--> for loop?
+    var chosenIntolerance = $(".intolerance-filters").checked;
         //URL example: "https://api.spoonacular.com/recipes/search?query=lasagna&apiKey=4b7cbd71e4304fe491c6f169aa6cc0af&number=5&diet=vegetarian&intolerances=gluten&ingredients=cheese, tomato"
         //checkboxes: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_checkbox_checked
 
@@ -62,24 +62,33 @@
             },
         };
     } 
-    if (chosenDiet == null & chosenIntolerance !== null) {
-         var spoonacularRecipeSettings = {"url": "https://api.spoonacular.com/recipes/search?query=" + findFood + "&apiKey=" + APIkey + "&number=5&intolerances=" + chosenIntolerance,
-         "method": "GET",
-         "timeout": 0,
-         "headers": {
-             "": "4b7cbd71e4304fe491c6f169aa6cc0af"
-            },
-        };
-    }    
-    if (chosenDiet !== null & chosenIntolerance !== null) {
-         var spoonacularRecipeSettings = {"url": "https://api.spoonacular.com/recipes/search?query=" + findFood + "&apiKey=" + APIkey + "&number=5&diet=" + chosenDiet + "&intolerances=" + chosenIntolerance,
-         "method": "GET",
-         "timeout": 0,
-         "headers": {
-             "": "4b7cbd71e4304fe491c6f169aa6cc0af"
-            },
-        };
-    }
+
+    //FOR LOOP FOR INTOLERANCES ONLY
+    // if (chosenDiet == null & chosenIntolerance !== null) {
+    //     //var intoleranceArr = [];
+    //     //for (var i=0; i < intoleranceArr.length; i++) {
+    //         var spoonacularRecipeSettings = {"url": "https://api.spoonacular.com/recipes/search?query=" + findFood + "&apiKey=" + APIkey + "&number=5&intolerances=" + intoleranceArr[i],
+    //         "method": "GET",
+    //         "timeout": 0,
+    //         "headers": {
+    //             "": "4b7cbd71e4304fe491c6f169aa6cc0af"
+    //             },
+    //         };
+    //     //}
+    // }    
+
+    // FOR LOOP FOR DIET PLUS INTOLERANCES
+    // if (chosenDiet !== null & chosenIntolerance !== null) {
+    //     //var intoleranceArr = [];
+    //     //for (var i=0; i < intoleranceArr.length; i++) {
+    //      var spoonacularRecipeSettings = {"url": "https://api.spoonacular.com/recipes/search?query=" + findFood + "&apiKey=" + APIkey + "&number=5&diet=" + chosenDiet + "&intolerances=" + intoleranceArr[i],
+    //      "method": "GET",
+    //      "timeout": 0,
+    //      "headers": {
+    //          "": "4b7cbd71e4304fe491c6f169aa6cc0af"
+    //         },
+    //     };
+    // }
 
     //GIPHY VARIABLES
     //document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
@@ -176,9 +185,9 @@
         }
 
         // //loop through chosen intolerances
-        // if (intolerances.checked == true) {
-        //     var userIntolerances = [];
-        //     for (var i=0; i < userIntolerances.length; i++) {
+                // if (chosenIntolerance == true) {
+        //     var intoleranceArr = [];
+        //     for (var i=0; i < intoleranceArr.length; i++) {
         //         $(chosenFiltersP).attr(".chosen-filters");
         //         $(chosenFiltersP).append("Chosen Intolerances: " + userIntolerances); 
         //         $(recipeDiv).append(chosenFiltersP);
