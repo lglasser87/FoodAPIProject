@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Meals & Deals</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/foodAPI.css">
+</head>
+
+<body>
+
+  <body>
+    <!-- Navbar goes here -->
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo" style="padding-left: 10px">Meals and Deals</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">Recipe Finder</a></li>
+            <li><a href="foodAPIMake.html">My Recipes</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Recipe Finder</a></li>
+        <li><a href="TESTMAKE.html">My Recipes</a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+      </ul>
+    </header>
+
+    <!-- Page Content goes here -->
+    <main>
+      <div class="container">
+        <div class="row">
+
+          <div class="col s12 m4 l3">
+            <!-- Note that "m4 l3" was added -->
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field">
+                    <input id="search" type="search" required>
+                    <label class="label-icon" for="search" id="find-food"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+            <!-- Diets: Omnivore, pescetatarian, vegetarian (Ovo, lacto), vegan, fruitarian, paleo -->
+            <div class="row">
+              <div class="input-field">
+                <select class="dietType">
+                  <option value="">Choose your option</option>
+                  <option value="omnivore">Omnivore (Everything)</option>
+                  <option value="pescetarian">Pescetarian</option>
+                  <option value="vegetarian">Vegetarian</option>
+                  <option value="vegan">Vegan</option>
+                  <option value="fruitarian">Fruitarian</option>
+                  <option value="paleo">Paleo</option>
+                </select>
+                <label>Diet Type</label>
+              </div>
+            </div>
+
+            <!-- intolerances: dairy, egg, gluten, grain, peanut, seafood, sesame, shellfish, soy, sulfite, tree nut, wheat -->
+            <div class="row">
+              <div class="input-field">
+                <select class="foodIntolerances" multiple>
+                  <option value="" disabled>Choose your option</option>
+                  <option value="dairy">Dairy</option>
+                  <option value="egg">Egg</option>
+                  <option value="gluten">Gluten</option>
+                  <option value="grain">Grain</option>
+                  <option value="peanut">Peanut</option>
+                  <option value="seafood">Seafood</option>
+                  <option value="sesame">Sesame</option>
+                  <option value="shellfish">Shellfish</option>
+                  <option value="soy">Soy</option>
+                  <option value="sulfite">Sulfite</option>
+                  <option value="tree nut">Tree Nut</option>
+                  <option value="wheat">Wheat</option>
+                </select>
+                <label>Food Intolerances</label>
+              </div>
+            </div>
+            <a class="waves-effect waves-light btn" id="findFoodBtn">Find Me Food!</a>
+          </div>
+
+          <div class="col s12 m8 l9">
+            <div class="row" id="found-recipes">
+              
+              
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </main>
+
+
+
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Silly Footer</h5>
+            <p class="grey-text text-lighten-4">Now time for some Gordon Ramsay
+            </p>
+          </div>
+          <div id="img-div">
+
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Gimme some Ramsay!</h5>
+            <!-- adding role as recommended by Bootstrap-->
+             <a class="waves-effect waves-light btn" id="gRamsay" role="button">Idiot Sandwhich?</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2020 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/JavaScript" src="foodFindAPI.js"></script>
+  </body>
+
+</html>
