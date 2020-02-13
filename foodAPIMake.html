@@ -2,162 +2,153 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Meals & Deals</title>
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles/foodAPI.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meals & Deals</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/foodAPI.css">
 </head>
 
 <body>
 
-  <body>
-    <div class="container">
-      <!-- Page Content goes here -->
-      <!-- Navbar goes here -->
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo" style="padding-left: 10px">DEMO SITE LAYOUT</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="foodAPIFind.html">Recipe Finder</a></li>
-            <li><a href="#">My Recipes</a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-          </ul>
-        </div>
-      </nav>
-
-      <ul class="sidenav" id="mobile-demo">
-        <li><a href="foodAPIFind.html">Recipe Finder</a></li>
-        <li><a href="#">My Recipes</a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-      </ul>
-
-      <div class="row">
-
-
-        <div class="col s12 m4 l3">
-          <!-- Note that "m4 l3" was added -->
-          <div class="row">
-            <form class="col s12">
-              <div class="row">
-                <div class="input-field">
-                  <input placeholder="My Awesome Grub" id="recipeName" type="text" class="validate">
-                  <label for="first_name">Recipe Name</label>
+    <body>
+        <header>
+            <!-- Navbar goes here -->
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo" style="padding-left: 10px">Meals and Deals</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="foodAPIFind.html">Recipe Finder</a></li>
+                        <li><a href="#">My Recipes</a></li>
+                    </ul>
                 </div>
-                <div class="row">
-                  <div class="input-field">
-                    <select>
-                      <option value="" disabled selected>Choose your option</option>
-                      <option value="1">Omnivore (Everything)</option>
-                      <option value="2">Pescetarian</option>
-                      <option value="3">Vegetarian (Ovo- & Lacto-)</option>
-                      <option value="4">Ovo Vegetarian</option>
-                      <option value="5">Lacto Vegetarian</option>
-                      <option value="6">Vegan</option>
-                      <option value="7">Fruitarian</option>
-                      <option value="8">Paleo</option>
-                    </select>
-                    <label>Diet Type</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field">
-                    <select multiple>
-                      <option value="" disabled>Choose your option</option>
-                      <option value="1">Dairy</option>
-                      <option value="2">Egg</option>
-                      <option value="3">Gluten</option>
-                      <option value="4">Grain</option>
-                      <option value="5">Peanut</option>
-                      <option value="6">Seafood</option>
-                      <option value="7">Sesame</option>
-                      <option value="8">Shellfish</option>
-                      <option value="9">Soy</option>
-                      <option value="10">Sulfite</option>
-                      <option value="11">Tree Nut</option>
-                      <option value="12">Wheat</option>
-                    </select>
-                    <label>Food Intolerances</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field inline">
-                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                    <label for="textarea1">Textarea</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-                  </div>
-                </div>
-            </form>
-          </div>
+            </nav>
 
-
-        </div>
-
-        <div class="col s12 m8 l9">
-          <!-- Note that "m8 l9" was added -->
-          <!-- Teal page content
-
-              This content will be:
-          9-columns-wide on large screens,
-          8-columns-wide on medium screens,
-          12-columns-wide on small screens  -->
-
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-    <footer class="page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.
-            </p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="foodAPIFind.html">Recipe Finder</a></li>
+                <li><a href="#">My Recipes</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
             </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-          © 2020 Copyright Text
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-        </div>
-      </div>
-    </footer>
-    </div>
+        </header>
+
+        <!-- Page Content goes here -->
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4 l3">
+                        <!-- Note that "m4 l3" was added -->
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field">
+                                        <input placeholder="My Awesome Grub" id="recipeName" type="text"
+                                            class="validate">
+                                        <label for="recipe_name">Recipe Name</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field">
+                                            <select class="dietType">
+                                                <option value="">Choose your option</option>
+                                                <option value="Omnivore">Omnivore (Everything)</option>
+                                                <option value="Pescetarian">Pescetarian</option>
+                                                <option value="Vegetarian">Vegetarian</option>
+                                                <option value="Vegan">Vegan</option>
+                                                <option value="Fruitarian">Fruitarian</option>
+                                                <option value="Paleo">Paleo</option>
+                                            </select>
+                                            <label>Diet Type</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field">
+                                            <select class="foodIntolerances" multiple>
+                                                <option value="N/A">None</option>
+                                                <option value="Dairy">Dairy</option>
+                                                <option value="Egg">Egg</option>
+                                                <option value="Gluten">Gluten</option>
+                                                <option value="Grain">Grain</option>
+                                                <option value="Peanut">Peanut</option>
+                                                <option value="Seafood">Seafood</option>
+                                                <option value="Sesame">Sesame</option>
+                                                <option value="Shellfish">Shellfish</option>
+                                                <option value="Soy">Soy</option>
+                                                <option value="Sulfite">Sulfite</option>
+                                                <option value="Tree Nut">Tree Nut</option>
+                                                <option value="Wheat">Wheat</option>
+                                            </select>
+                                            <label>Food Intolerances</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field">
+                                            <textarea id="instructions" class="materialize-textarea"></textarea>
+                                            <label for="textarea1">Textarea</label>
+                                            <span class="helper-text" data-error="wrong" data-success="right">Helper
+                                                text</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <a class="waves-effect waves-light btn" id="saveFood">Save My Food!</a>
+
+                    </div>
+
+                    <div class="col s12 m8 l9">
+                        <div class="row" id="saved-recipe">
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <footer class="page-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Silly Footer</h5>
+                  <p class="grey-text text-lighten-4">Now time for some Gordon Ramsay
+                  </p>
+                </div>
+                <div id="img-div">
+      
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Gimme some Ramsay!</h5>
+                   <a class="waves-effect waves-light btn" id="gRamsay">Idiot Sandwhich?</a>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+                © 2020 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+              </div>
+            </div>
+          </footer>
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script type="text/JavaScript" src="foodAPI.js"></script>
-  </body>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/JavaScript" src="foodMakeAPI.js"></script>
+    </body>
 
 </html>
