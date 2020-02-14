@@ -98,8 +98,7 @@ $(document).ready(function () {
   $("#gRamsay").on("click", function(event){
     event.preventDefault();
 
-    //removed gordonRamsey as var, doesn't need to be var
-
+    //no need to make var gordonRamsay; can just directly put his name into URL since he's the only one
     var giphyURL = "https://api.giphy.com/v1/gifs/search?q=gordonramsay&api_key=dc6zaTOxFJmzC&limit=1";
 
     $.ajax({
@@ -109,16 +108,16 @@ $(document).ready(function () {
                 console.log(response); 
                 var results = response.data;
 
-                for (var i = 0; i < results.length; i++) {
-    
+                //adding for loop
+                for (var i=0; i < results[i].length; i ++) {
                     var gifImage = $("<img>").css({"width":"200px", "height":"200px"});
-                    //what is #gRamImg? shouldn't it be gifImage?
-                    //added [i] to results
-                    $(gifImage).attr("src", results[i].images.fixed_height.url);
+                    //changing #gRamImg to just gifImage
                     //$("#gRamImg").attr("src", results.images.fixed_height.url);
+                    //adding [i] to results
+                    $(gifImage).attr("src", results[i].images.fixed_height.url);
                     $("#img-div").append(gifImage);
-
                 }
+        
         });
 
   });
